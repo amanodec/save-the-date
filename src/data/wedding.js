@@ -13,7 +13,10 @@ export const wedding = {
   dateShort: '14.02.27',
   opening: 'Every great story starts long before the main characters meet.',
   production: 'A LITTLE FATE. A LOT OF LIFE.',
-  audio: { src: '', volume: 0.28 }, // Add a licensed MP3 URL. Empty = a quiet generated ambient score.
+  audio: {
+    src: new URL('../music/FOREVER - TEGI PANNU TANU GREWAL MANNI SANDHU PREM LATA (OFFICIAL MUSIC VIDEO).mp3', import.meta.url).href,
+    volume: 0.28,
+  }, // Vite bundles the local MP3. Empty src restores the generated ambient score.
   photos: {
     brideChild1: 'https://images.unsplash.com/photo-1519457431-44ccd64a579b',
     brideChild2: 'https://images.unsplash.com/photo-1471286174890-9c112ffca5b4',

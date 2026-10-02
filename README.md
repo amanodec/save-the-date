@@ -20,7 +20,7 @@ All story content, names, dates and the eight image slots live in `src/data/wedd
 
 Put original photographs in `public/photos/` and replace a placeholder URL with `/photos/your-photo.jpg`. Unsplash placeholders use responsive widths and gracefully fall back to an analogue-style placeholder if unavailable. The placeholder people are illustrative; they do not depict the named couple.
 
-Add licensed background music to `public/audio/` and set `audio.src` to `/audio/score.mp3`. Until then, opting into sound starts a quiet, locally synthesized ambient chord. Audio starts only following a tap, can be muted in the top corner, and pauses while the page is hidden.
+The soundtrack is the supplied FOREVER MP3 in `src/music/`, referenced by `audio.src` in the wedding config and bundled by Vite. Replace that reference to change the song; an empty source restores the quiet, locally synthesized ambient chord. Audio starts only following a tap, can be muted in the top corner, and pauses while the page is hidden.
 
 Social titles, descriptions and the sharing photo are generated from the same wedding config. `scripts/build-worker.js` adds a small optional Cloudflare-compatible hosting wrapper; the core site is a normal Vite static app in `dist/client`.
 
