@@ -22,7 +22,7 @@ Put original photographs in `public/photos/` and replace a placeholder URL with 
 
 The soundtrack is the supplied FOREVER MP3 in `src/music/`, referenced by `audio.src` in the wedding config and bundled by Vite. Replace that reference to change the song; an empty source restores the quiet, locally synthesized ambient chord. Audio starts only following a tap, can be muted in the top corner, and pauses while the page is hidden.
 
-Social titles, descriptions and the sharing photo are generated from the same wedding config. `scripts/build-worker.js` adds a small optional Cloudflare-compatible hosting wrapper; the core site is a normal Vite static app in `dist/client`.
+Social titles, descriptions and the sharing photo are generated from the same wedding config. `npm run build` creates a standalone static website in `dist/`. Upload that folder to any static web host. The project has no hosting-provider dependency or authentication gate.
 
 ## Experience
 
