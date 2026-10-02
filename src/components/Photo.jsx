@@ -1,0 +1,8 @@
+import { useState } from 'react';
+import { imageUrl } from '../data/wedding';
+export default function Photo({ src, alt, className = '', priority = false, position = '50% 50%' }) {
+  const [failed, setFailed] = useState(false);
+  return <div className={`photo ${className} ${failed ? 'photo-fallback' : ''}`}>
+    {failed ? <span className="fallback-label">{alt}<small>A memory, waiting to be here.</small></span> : <img src={imageUrl(src)} srcSet={src.includes('images.unsplash.com') ? `${imageUrl(src, 540)} 540w, ${imageUrl(src, 900)} 900w, ${imageUrl(src, 1600)} 1600w` : undefined} sizes="(max-width: 600px) 100vw, 85vw" alt={alt} loading={priority ? 'eager' : 'lazy'} fetchPriority={priority ? 'high' : 'auto'} decoding="async" style={{ objectPosition: position }} onError={() => setFailed(true)} />}
+  </div>;
+}
