@@ -1,4 +1,4 @@
-# A Film Years in the Making
+# Ek Love Story. Full Filmi.
 
 A mobile-first, scroll-directed Save the Date film, built with Vite, React, JavaScript, CSS, GSAP and ScrollTrigger. No backend, Next.js, or smooth-scrolling library.
 
@@ -22,10 +22,12 @@ Put original photographs in `public/photos/` and replace a placeholder URL with 
 
 The soundtrack is the supplied FOREVER MP3 in `src/music/`, referenced by `audio.src` in the wedding config and bundled by Vite. Replace that reference to change the song; an empty source restores the quiet, locally synthesized ambient chord. Audio starts only following a tap, can be muted in the top corner, and pauses while the page is hidden.
 
-Social titles, descriptions and the sharing photo are generated from the same wedding config. `npm run build` creates a standalone static website in `dist/`. Upload that folder to any static web host. The project has no hosting-provider dependency or authentication gate.
+Social titles, descriptions and the sharing photo are generated from the same wedding config. `npm run build` creates a standalone static website in `dist/`. Upload that folder to any static web host. For the best WhatsApp preview, set the public site URL when building, for example `VITE_SITE_URL=https://your-domain.com npm run build`. The project has no hosting-provider dependency or authentication gate.
 
 ## Experience
 
-Nine connected scenes: opening credits, her childhood, his childhood, parallel lives, the meeting, an expanding cinema frame, trailer titles, names, and the release date. A small post-credit moment closes the film. Scrolling backwards reverses the story animation. Reduced-motion preferences show a simplified, readable film without pinning or animation.
+Nine connected scenes with a cheeky Bollywood rom-com feel: poster-style opening credits, two scrapbook childhoods, parallel lives carried by paper characters, a camera-snap plot twist, an expanding cinema frame, five kinetic collage titles, a quiet announcement, the leading names, and a cinema-ticket save-the-date. Warm ivory, rani pink, marigold, and green carry through the finale and the small post-credit moment. Playful Hinglish, handwritten notes, taped photos, filmi stickers, and light confetti make the story feel personal and celebratory. Scrolling backwards reverses the story animation. Reduced-motion preferences show a simplified, readable film without pinning or animation.
 
-Google Fonts supplies Cormorant Garamond and DM Sans; local fallback fonts are included. Photos and fonts are the only external runtime resources. Replace and self-host them for an offline deployment.
+Google Fonts supplies Bricolage Grotesque for bold poster titles, Kalam for handwritten notes, and DM Sans for supporting text. Cormorant Garamond remains available for legacy serif details; local fallback fonts are included. Photos and fonts are the only external runtime resources. Replace and self-host them for an offline deployment.
+
+Paper cutouts are CSS masks of the existing photographs, with an ivory edge and a light physical shadow. Flowers and sparkles are small inline SVGs; stickers, tape, and confetti are CSS. They need no additional photo slots or runtime image-processing dependency. The camera exposure, collage movement, and confetti are disabled for reduced-motion visitors.

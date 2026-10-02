@@ -5,3 +5,509 @@
 @media(max-height:700px) and (min-width:701px){.intro-title h1{font-size:96px}.intro-title{margin-top:-20px}.intro-bottom{bottom:85px}.childhood-stage{padding:90px 10vw}.memory{width:360px}.life{top:38%;height:240px;width:185px}.parallel-footer{bottom:15%}.early-couple{height:410px;width:480px}.production-credit{bottom:14%}}
 @media(max-height:690px) and (max-width:700px){.intro-title h1{font-size:77px}.intro-title{margin-top:-40px}.intro-title>.eyebrow{margin-bottom:18px}.intro-byline{margin-top:22px}.intro-bottom{bottom:80px}.childhood-stage,.childhood.groom .childhood-stage{gap:25px;padding-top:90px}.childhood-copy h2{font-size:36px}.childhood-copy p{display:none}.memory{width:70vw}.scene-footnote{bottom:65px}.parallel-heading{top:16%}.parallel-heading h2{font-size:34px}.life{top:38%}.life-years{top:67%}.early-couple{height:80vw}.early-caption h2{font-size:30px}.hero-names h2{font-size:min(22vw,calc(155vw / var(--name-length,5)))}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}.intro-title,.intro-bottom{opacity:1}.intro-opening{display:none}.scene-stage{min-height:100svh;height:auto}.intro-stage,.parallel-stage,.cinema-stage,.hero-stage,.date-stage{height:100svh}.childhood-stage{min-height:100svh}.childhood-copy,.memory{opacity:1}.memory-window{display:flex;aspect-ratio:auto;gap:5px}.memory .photo{position:relative;width:50%;height:240px;opacity:1}.memory img{object-position:center}.year-second{display:none}.plot-before,.plot-after{position:relative;inset:auto;opacity:1}.meeting-stage{display:flex;flex-direction:column;gap:50px;padding:140px 20px 80px}.plot-before .eyebrow{display:none}.plot-before h2,.plot-after h2{font-size:46px}.early-couple{opacity:1}.single-path{display:none}.life-year{opacity:0}.life-year-3{opacity:1}.parallel-stage{--path-gap:0%}.meeting-dot{opacity:1;transform:none}.cinema-frame{width:100vw;height:100svh}.cinema-footnote{display:none}.trailer-stage{display:flex;flex-direction:column;padding:100px 20px}.trailer-kicker{position:static;margin-bottom:65px}.trailer-card{position:static;opacity:1;visibility:visible;min-height:60svh;padding:60px 0}.hero-names{opacity:1}.hero-stage{opacity:1}.date-stage{opacity:1}.film-progress-fill{transition:none}}
+
+/* The first act: a little sunshine, a little paper, a very long backstory. */
+:root {
+  --ivory: #f2ebdd;
+  --aged-paper: #e8ddc9;
+  --ink: #292b25;
+  --pencil: #786f60;
+  --accent: #716f49;
+  color: var(--ink);
+  background: var(--ivory);
+}
+html { scrollbar-color: #9a907a var(--ivory); }
+::selection { background: #b9b497; color: #252821; }
+.film-header, .film-footer { color: #fff9ef; }
+.sound-error { color: var(--paper); }
+.film-header .sound-mark i { background: #fff9ef; }
+.film-header .film-monogram i { color: #ddd5c7; }
+.film-footer .chapter-number i { color: #ccc6b9; }
+.grain { opacity: .033; }
+.intro-stage { background: var(--ivory); }
+.intro-title > .eyebrow, .intro-opening .eyebrow { color: #78705e; }
+.intro-title h1 em { color: var(--accent); }
+.intro-byline { color: #5b594b; }
+.intro-byline span { color: #807664; }
+.enter-button { border-color: #9a917d; }
+.enter-button .sound-mark i { background: #555647; }
+.silent-button, .scroll-prompt { color: #7d7361; }
+.scroll-stem { background: linear-gradient(#7c7760, transparent); }
+.eyebrow { color: var(--pencil); }
+.childhood-stage {
+  background: radial-gradient(ellipse at 70% 45%, #f8f1e5, var(--ivory) 65%);
+}
+.childhood.groom .childhood-stage {
+  background: radial-gradient(ellipse at 30% 45%, #f1eadb, #e8ddc9 75%);
+}
+.childhood-copy .eyebrow { color: #827654; }
+.childhood-copy h2 { font-size: clamp(38px, 4.8vw, 66px); }
+.childhood-copy p { color: #786f5d; font-size: 12px; }
+.memory { background: #eee2ca; padding: 12px; box-shadow: 3px 12px 30px #4e412a20; }
+.memory .photo { filter: sepia(.15) saturate(.8) contrast(.98); }
+.film-edge { color: #6e654f; }
+.scene-footnote { color: #827965; }
+.childhood-cutout {
+  position: absolute;
+  left: 69%;
+  top: 59%;
+  width: clamp(110px, 12vw, 170px);
+  height: clamp(130px, 14vw, 205px);
+  z-index: 5;
+  visibility: hidden;
+  opacity: 0;
+  transform: rotate(4deg);
+}
+.groom .childhood-cutout { left: 22%; top: 56%; transform: rotate(-4deg); }
+.paper-note { display: block; margin-top: 9px; font: italic 15px var(--serif); text-align: center; white-space: nowrap; }
+.paper-cutout {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center bottom;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.parallel-stage {
+  --character-gap: 27%;
+  background: linear-gradient(#e8ddc9, #f2ebdd 50%, #eee5d4);
+}
+.parallel-heading { top: 15%; }
+.parallel-heading .eyebrow { color: #847a63; }
+.parallel-heading h2 { max-width: 720px; margin: 16px auto 0; text-wrap: balance; }
+.life { width: clamp(150px, 20vw, 250px); height: clamp(205px, 26vw, 320px); top: 36%; }
+.life-bride { left: calc(50% - var(--character-gap)); transform: translateX(-50%); }
+.life-groom { left: calc(50% + var(--character-gap)); right: auto; transform: translateX(-50%); }
+.life-bride .paper-cutout { transform: rotate(-4deg); }
+.life-groom .paper-cutout { transform: rotate(5deg); }
+.life > span { font: italic 25px var(--serif); margin-top: 15px; color: #5b594b; }
+.path { background: linear-gradient(transparent, #8b8066 30%, #8b8066); opacity: .6; }
+.paths { top: 31%; }
+.meeting-dot { background: #686c49; box-shadow: none; bottom: 8%; }
+.life-years { top: 75%; left: 39%; right: 39%; height: 62px; }
+.life-year { background: radial-gradient(ellipse, #eee5d4 0%, #eee5d400 75%); }
+.life-year > span { font-size: 34px; }
+.life-year small { color: #7c725c; }
+.parallel-footer { bottom: 12%; color: #7b725f; max-width: 500px; margin: auto; line-height: 1.35; }
+.meeting-stage { background: var(--ivory); }
+.single-path { background: linear-gradient(#8b806660, transparent 30%, transparent 70%, #8b806660); }
+.plot-before .eyebrow { color: #857b60; }
+.plot-after h2 { color: #666c4c; }
+.meeting-pair {
+  width: min(54vw, 510px);
+  height: min(35vw, 340px);
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+}
+.meeting-pair .paper-cutout { width: 52%; height: 100%; position: absolute; top: 0; }
+.pair-bride { left: 0; z-index: 2; }
+.pair-groom { right: 0; }
+.snap-caption { position: absolute; top: calc(100% + 35px); left: 0; right: 0; text-align: center; font-size: 9px; letter-spacing: .18em; color: #7a725e; }
+.camera-flash, .montage-flash { position: absolute; inset: 0; z-index: 10; pointer-events: none; background: #fffef8; opacity: 0; }
+.early-couple > .photo { filter: saturate(.95); }
+.early-caption .eyebrow { color: #857a63; }
+.cinema-stage { color: var(--ink); background: var(--ivory); }
+.cinema-frame > .photo { filter: saturate(1); }
+.cinema-shade { background: linear-gradient(#f2ebdd99, #f2ebddc7 50%, #e8ddc9d9); }
+.cinema-copy .eyebrow { color: var(--pencil); }
+.cinema-copy h2 { font-size: clamp(46px, 6.5vw, 96px); text-shadow: none; }
+.cinema-copy h2 em { color: var(--accent); }
+.cinema-footnote { color: #7d725d; }
+.cinema-ratio { color: var(--pencil); }
+.cinema-frame > .photo, .hero-photo { background: var(--aged-paper); }
+.cinema-frame > .photo-fallback, .hero-photo.photo-fallback {
+  background: linear-gradient(140deg, #f8f1e5, var(--aged-paper) 55%, var(--ivory));
+}
+.cinema-frame .fallback-label, .hero-photo .fallback-label { color: var(--pencil); }
+
+/* A contained burst of celebration. Four scraps, five title beats. */
+.trailer-stage { background: #e8ddc9; color: var(--ink); }
+.trailer-kicker { z-index: 6; top: 15%; color: #7b705c; font-size: 9px; }
+.trailer-collage { position: absolute; inset: 0; pointer-events: none; opacity: 0; visibility: hidden; }
+.montage-piece { position: absolute; }
+.montage-couple {
+  left: 7%; top: 22%; width: min(26vw, 340px); height: min(31vw, 390px);
+  transform: rotate(-9deg); padding: 7px; background: #faf5e9;
+  clip-path: polygon(1% 1%, 38% 0%, 64% 2%, 99% 0%, 100% 37%, 98% 72%, 100% 98%, 58% 100%, 27% 97%, 1% 99%, 0% 69%, 2% 35%);
+}
+.montage-couple .photo img { object-position: 25% 50%; }
+.paper-tape { position: absolute; top: -3px; left: 31%; width: 38%; height: 24px; background: #d9c99eb0; transform: rotate(3deg); }
+.montage-bride { width: min(18vw, 220px); height: min(26vw, 310px); left: 5%; bottom: 8%; transform: rotate(7deg); z-index: 3; }
+.montage-groom { width: min(20vw, 240px); height: min(27vw, 325px); right: 4%; top: 19%; transform: rotate(-5deg); z-index: 3; }
+.montage-strip { display: flex; gap: 6px; right: 2%; bottom: 8%; width: min(39vw, 450px); height: min(13vw, 150px); padding: 15px 12px; background: #30312a; transform: rotate(8deg); }
+.montage-strip::before, .montage-strip::after { content: ''; position: absolute; left: 0; right: 0; height: 5px; background: repeating-linear-gradient(to right, transparent 0 12px, #c8c0ae 12px 17px, transparent 17px 25px); }
+.montage-strip::before { top: 4px; }
+.montage-strip::after { bottom: 4px; }
+.montage-strip .photo { flex: 1; min-width: 0; filter: saturate(.7); }
+.montage-scribble { position: absolute; width: 90px; height: 25px; border-bottom: 2px solid #8b8761; border-radius: 50%; transform: rotate(-12deg); }
+.scribble-one { left: 27%; top: 72%; }
+.scribble-two { right: 29%; top: 25%; transform: rotate(18deg); width: 55px; }
+.scribble-two::after { content: ''; position: absolute; right: -1px; bottom: -4px; width: 10px; height: 10px; border-right: 2px solid #8b8761; border-bottom: 2px solid #8b8761; transform: rotate(-25deg); }
+.trailer-card { z-index: 5; padding: 40px 8vw; }
+.trailer-card h2 { font-size: clamp(45px, 6.8vw, 100px); font-weight: 600; text-shadow: 0 1px #f2ebdd60; line-height: .99; }
+.trailer-card-0 h2 { font: 500 clamp(66px, 10vw, 145px)/.84 var(--serif); letter-spacing: -.06em; }
+.trailer-card-3 h2 { font: 600 clamp(55px, 8.5vw, 120px)/.94 'DM Sans', sans-serif; }
+.trailer-card-4 h2 { font-size: clamp(42px, 6vw, 86px); }
+.trailer-index { color: #807658; margin-bottom: 20px; }
+.trailer-card p { color: #7a705a; font-size: 22px; }
+
+/* The final act carries the opening's warm ivory and olive palette. */
+.hero-stage, .date-stage, .post-credits { background: var(--ivory); color: var(--ink); }
+.finale-quiet { position: absolute; z-index: 2; inset: 0; display: grid; place-items: center; padding: 40px; text-align: center; font: 400 clamp(29px, 4vw, 49px)/1.15 var(--serif); color: var(--accent); opacity: 0; visibility: hidden; }
+.hero-photo, .hero-shade, .hero-names { opacity: 0; }
+.hero-shade { background: linear-gradient(#f2ebddb3, #f2ebddcc 45%, #f2ebdde6); }
+.hero-names > .eyebrow { color: var(--pencil); }
+.hero-names h2 { font-size: min(13.5vw, calc(158vw / var(--name-length, 5)), 185px); }
+.hero-names h2 em { color: var(--accent); }
+.hero-married { font: italic clamp(24px, 3vw, 40px) var(--serif); margin-top: 35px; color: var(--accent); opacity: 0; }
+.date-label, .full-date, .production-credit, .production-credit span { color: var(--pencil); }
+.release-date b, .coming-soon { color: var(--accent); }
+.post-credits > p { color: var(--accent); }
+.post-credits button { color: var(--pencil); border-color: #9a917d; }
+.post-credits button:focus-visible { outline-color: var(--ink); }
+
+@media (max-width: 700px) {
+  .childhood-stage, .childhood.groom .childhood-stage { padding-left: 28px; padding-right: 28px; gap: 26px; }
+  .childhood-copy h2 { font-size: 44px; max-width: 300px; }
+  .childhood-copy p { font-size: 11px; max-width: 270px; }
+  .memory { width: min(77vw, 360px); padding: 8px; }
+  .childhood-cutout { left: 66%; top: 63%; width: 24vw; height: 28vw; max-height: 145px; }
+  .groom .childhood-cutout { left: 6%; top: 64%; }
+  .paper-note { font-size: 12px; margin-top: 7px; }
+  .parallel-stage { --character-gap: 25%; }
+  .parallel-heading { top: 17%; }
+  .parallel-heading h2 { font-size: 39px; max-width: 310px; }
+  .parallel-heading .eyebrow { font-size: 7px; }
+  .life { width: 34vw; height: 45vw; max-height: 260px; top: 39%; }
+  .life > span { font-size: 21px; margin-top: 12px; }
+  .life-years { top: 71%; left: 38%; right: 38%; }
+  .life-year > span { font-size: 29px; }
+  .parallel-footer { bottom: 12%; max-width: 285px; font-size: 16px; }
+  .meeting-pair { width: 72vw; height: 49vw; top: 45%; }
+  .snap-caption { font-size: 8px; top: calc(100% + 28px); }
+  .early-couple { height: 96vw; }
+  .early-caption h2 { font-size: 38px; }
+  .cinema-copy h2 { font-size: clamp(44px, 11vw, 74px); }
+  .trailer-kicker { top: 17%; max-width: 240px; font-size: 7px; }
+  .trailer-card { padding: 30px 20px; }
+  .trailer-card h2 { font-size: 12vw; }
+  .trailer-card-0 h2 { font-size: 20vw; }
+  .trailer-card-3 h2 { font-size: 15vw; }
+  .trailer-card-4 h2 { font-size: 11vw; }
+  .trailer-card p { font-size: 18px; max-width: 240px; }
+  .montage-couple { left: -4%; top: 22%; width: 38vw; height: 44vw; padding: 5px; }
+  .montage-groom { right: -5%; top: 24%; width: 31vw; height: 41vw; }
+  .montage-bride { left: -2%; bottom: 17%; width: 30vw; height: 40vw; }
+  .montage-strip { right: -10%; bottom: 14%; width: 60vw; height: 20vw; gap: 4px; padding: 12px 8px; }
+  .paper-tape { height: 16px; }
+  .scribble-one { width: 45px; left: 30%; top: 77%; }
+  .scribble-two { right: 24%; top: 29%; width: 38px; }
+  .hero-names h2 { font-size: min(23vw, calc(155vw / var(--name-length, 5))); }
+  .hero-married { font-size: 27px; margin-top: 30px; }
+  .finale-quiet { padding: 40px 55px; font-size: 34px; }
+}
+@media (max-height: 690px) and (max-width: 700px) {
+  .childhood-copy h2 { font-size: 36px; }
+  .childhood-cutout { top: 63%; width: 22vw; height: 26vw; }
+  .life { top: 36%; width: 31vw; height: 40vw; }
+  .parallel-heading { top: 15%; }
+  .parallel-heading h2 { font-size: 34px; }
+  .life-years { top: 69%; }
+  .parallel-footer { bottom: 12%; }
+  .early-couple { height: 80vw; }
+  .early-caption h2 { font-size: 32px; }
+  .hero-names { padding-top: 3vh; }
+  .hero-married { font-size: 24px; margin-top: 25px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .childhood-cutout { opacity: 1; visibility: visible; }
+  .parallel-stage { --character-gap: 12%; --path-gap: 0%; }
+  .camera-flash, .montage-flash, .meeting-pair { display: none; }
+  .meeting-stage { gap: 40px; }
+  .trailer-collage { display: none; }
+  .trailer-stage { background: #e8ddc9; }
+  .trailer-kicker { margin-bottom: 25px; }
+  .trailer-card { min-height: 45svh; }
+  .finale-quiet { position: relative; opacity: 1; visibility: visible; min-height: 45svh; font-size: 32px; }
+  .hero-stage { height: auto; min-height: 145svh; }
+  .hero-photo, .hero-shade { top: 45svh; height: 100svh; opacity: 1; }
+  .hero-names { top: 45svh; height: 100svh; opacity: 1; }
+  .hero-married { opacity: 1; }
+}
+
+/* A cheeky, homemade rom-com poster: rani pink, marigold, and a little masti. */
+:root {
+  --ivory: #fff7e8;
+  --aged-paper: #ffedcc;
+  --ink: #30372f;
+  --pencil: #70634e;
+  --pink: #b92b55;
+  --marigold: #ffc44c;
+  --green: #315a46;
+  --accent: var(--pink);
+  --display: 'Bricolage Grotesque', 'DM Sans', sans-serif;
+  --hand: 'Kalam', cursive;
+}
+::selection { background: var(--marigold); color: var(--ink); }
+button:focus-visible { outline-color: var(--pink); outline-width: 2px; }
+.film-header button:focus-visible { outline-color: #fff9ef; }
+.film-progress { background: #ddcbb0; height: 3px; }
+.film-progress-fill { background: var(--pink); }
+.header-title { letter-spacing: .09em; }
+.eyebrow { letter-spacing: .1em; font-weight: 700; }
+.filmi-flower, .filmi-sparkle { position: absolute; pointer-events: none; }
+.filmi-flower { color: var(--marigold); width: 90px; height: 90px; }
+.filmi-sparkle { color: var(--pink); width: 42px; height: 42px; }
+.filmi-sticker {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  width: 116px; aspect-ratio: 1; background: var(--marigold); color: var(--pink);
+  font: 800 16px/1.08 var(--display); text-align: center;
+  clip-path: polygon(50% 0%,60% 10%,75% 4%,79% 20%,94% 25%,89% 40%,100% 50%,89% 60%,94% 75%,79% 80%,75% 96%,60% 90%,50% 100%,40% 90%,25% 96%,21% 80%,6% 75%,11% 60%,0% 50%,11% 40%,6% 25%,21% 20%,25% 4%,40% 10%);
+}
+.intro-stage { background: var(--ivory); }
+.intro-title { position: relative; margin-top: -35px; }
+.intro-title > .eyebrow { color: var(--green); font-size: 10px; margin-bottom: 22px; }
+.intro-title h1 { font: 800 clamp(78px, 9.8vw, 142px)/.87 var(--display); letter-spacing: -.065em; }
+.intro-line { display: block; }
+.intro-line-0 { color: var(--green); }
+.intro-line-1 { color: var(--pink); text-shadow: 4px 5px 0 var(--marigold); transform: rotate(-4deg); }
+.intro-line-2 { display: inline-block; margin-top: 20px; padding: 3px 23px 0; background: var(--marigold); color: var(--ink); font: 700 .4em/1.2 var(--hand); letter-spacing: -.045em; transform: rotate(-3deg); }
+.intro-byline { color: var(--green); font: 700 21px var(--hand); margin-top: 24px; }
+.intro-byline .byline-amp { display: inline; color: var(--pink); font: inherit; margin: 0; letter-spacing: normal; }
+.intro-byline .intro-date { font-weight: 600; font-size: 9px; margin-top: 4px; color: var(--pencil); }
+.intro-stamp { position: absolute; left: -170px; top: 37%; transform: rotate(-13deg); }
+.intro-review { position: absolute; width: 180px; right: -205px; bottom: 4%; transform: rotate(7deg); text-align: left; }
+.intro-review p { font: 700 21px/1.3 var(--hand); color: var(--pink); }
+.intro-review small { display: block; font-size: 9px; line-height: 1.4; margin-top: 6px; color: var(--pencil); }
+.intro-flower { top: -18px; right: -130px; width: 78px; height: 78px; transform: rotate(12deg); }
+.intro-sparkle { left: -90px; bottom: 5%; }
+.intro-opening p { font: 700 clamp(28px, 4vw, 45px)/1.2 var(--hand); color: var(--pink); }
+.intro-bottom { bottom: 90px; }
+.enter-button { background: var(--pink); color: var(--ivory); border: 1px solid var(--pink); border-radius: 7px; padding: 13px 20px; box-shadow: 3px 4px 0 var(--marigold); font-size: 12px; font-weight: 600; }
+.enter-button .sound-mark i { background: var(--ivory); }
+.silent-button { color: var(--pencil); }
+.scroll-prompt { color: var(--green); letter-spacing: .08em; }
+
+.childhood-stage, .childhood.groom .childhood-stage { background: var(--ivory); gap: clamp(40px, 7vw, 110px); padding: 100px 9vw; }
+.childhood.groom .childhood-stage { background: #fff0d4; }
+.childhood-copy { max-width: 430px; }
+.childhood-copy .eyebrow { display: inline-block; padding: 7px 11px 6px; margin-bottom: 25px; background: var(--pink); color: var(--ivory); font: 700 10px 'DM Sans', sans-serif; letter-spacing: .09em; transform: rotate(-3deg); border-radius: 3px; }
+.childhood-copy h2 { font: 800 clamp(44px, 5.6vw, 80px)/.96 var(--display); letter-spacing: -.065em; color: var(--pink); text-wrap: initial; }
+.childhood-copy h2 > span { display: block; }
+.childhood-copy h2 > span:last-child { transform: rotate(-2deg); }
+.childhood-copy p { color: var(--pencil); font-size: 13px; line-height: 1.65; max-width: 285px; margin-top: 23px; }
+.groom .childhood-copy h2 { color: var(--green); }
+.groom .childhood-copy .eyebrow { background: var(--green); transform: rotate(2deg); }
+.childhood-note { margin-top: 26px; color: var(--green); font: 400 21px/1.3 var(--hand); transform: rotate(-5deg); }
+.childhood-note svg { display: block; width: 135px; height: 51px; margin: 0 0 0 85px; }
+.memory { position: relative; width: clamp(290px, 39vw, 560px); background: #fffdf5; padding: 10px 14px 9px; border: 1px solid #ddcaae; border-radius: 3px; box-shadow: 6px 9px 0 #f1d7ad, 8px 15px 24px #5c3d2512; transform: rotate(3deg); }
+.groom .memory { transform: rotate(-3deg); box-shadow: -6px 9px 0 #f1d7ad, -8px 15px 24px #5c3d2512; }
+.memory::before { content: ''; position: absolute; z-index: 5; width: 100px; height: 29px; left: calc(50% - 50px); top: -15px; background: #ffc44cb3; transform: rotate(-6deg); clip-path: polygon(2% 0,97% 3%,100% 92%,0 100%); }
+.memory .photo { filter: saturate(.95); }
+.memory-window, .photo { background: var(--aged-paper); }
+.photo-fallback { background: linear-gradient(140deg, var(--ivory), var(--aged-paper)); }
+.fallback-label { color: var(--pencil); }
+.film-edge { color: var(--pink); font-weight: 600; font-size: 8px; letter-spacing: .07em; height: 28px; }
+.film-edge.bottom { color: var(--pencil); height: 35px; }
+.film-edge.top span:last-child { font-size: 13px; }
+.memory-sticker { position: absolute; z-index: 6; right: -35px; top: -32px; width: 105px; font-size: 17px; transform: rotate(12deg); }
+.groom .memory-sticker { color: var(--green); }
+.paper-note { font: 400 16px var(--hand); color: var(--pink); }
+.childhood-cutout { left: 75%; top: 64%; }
+.groom .childhood-cutout { left: 13%; top: 64%; }
+.childhood-flower { left: 5%; top: 13%; width: 55px; height: 55px; transform: rotate(-15deg); }
+.childhood-sparkle { right: 7%; bottom: 19%; width: 30px; height: 30px; color: var(--green); }
+.scene-footnote { bottom: 87px; color: var(--pink); letter-spacing: .08em; font-size: 9px; font-weight: 600; }
+
+.parallel-stage { background: linear-gradient(#fff0d4, var(--ivory) 55%, #ffe5e7); }
+.parallel-heading { top: 14%; }
+.parallel-heading .eyebrow { color: var(--pink); font-weight: 700; }
+.parallel-heading h2 { font: 800 clamp(32px, 4.2vw, 58px)/1.02 var(--display); letter-spacing: -.055em; max-width: 850px; color: var(--green); }
+.parallel-heading h2 > span { display: block; }
+.parallel-heading h2 > span:last-child { color: var(--pink); }
+.life > span { font: 700 25px var(--hand); color: var(--pink); }
+.life-groom > span { color: var(--green); }
+.path-left { background: linear-gradient(transparent, var(--pink) 30%); }
+.path-right { background: linear-gradient(transparent, var(--green) 30%); }
+.meeting-dot { background: var(--pink); width: 10px; height: 10px; left: calc(50% - 5px); }
+.life-year { background: radial-gradient(ellipse, #ffece3 0%, #ffece300 75%); }
+.life-year > span { font-family: var(--display); font-weight: 800; color: var(--pink); }
+.life-year small { color: var(--green); }
+.parallel-footer { font: 400 20px/1.4 var(--hand); color: var(--green); }
+.plot-before h2, .plot-after h2 { font: 800 clamp(52px, 8vw, 112px)/1 var(--display); letter-spacing: -.06em; color: var(--pink); transform: rotate(-4deg); }
+.plot-after h2 { text-shadow: 4px 5px 0 var(--marigold); }
+.plot-before .eyebrow, .early-caption .eyebrow { color: var(--green); }
+.early-couple > .photo { border: 8px solid #fffdf5; box-shadow: 5px 6px 0 var(--marigold); transform: rotate(-2deg); }
+.early-caption h2 { font: 700 clamp(27px, 3vw, 43px)/1.2 var(--hand); color: var(--pink); }
+.snap-caption { color: var(--pink); font-weight: 700; }
+/* Keep the meeting titles above the cutouts, including during scroll transitions. */
+@media (prefers-reduced-motion: no-preference) {
+  .meeting-stage .plot-before, .meeting-stage .plot-after { top: 15svh; }
+  .meeting-stage .plot-before h2, .meeting-stage .plot-after h2 {
+    font-size: clamp(42px, min(8vw, 10svh), 112px);
+  }
+  .meeting-stage .meeting-pair { top: 59%; height: min(35vw, 340px, 38svh); }
+}
+@media (prefers-reduced-motion: no-preference) and (max-width: 700px) {
+  .meeting-stage .plot-before h2, .meeting-stage .plot-after h2 { font-size: 14vw; }
+  .meeting-stage .meeting-pair { height: min(49vw, 340px, 38svh); }
+}
+.cinema-shade { background: linear-gradient(#fff7e8a6, #fff7e8d9 60%, #ffedccb3); }
+.cinema-copy h2 { font: 800 clamp(45px, 6.8vw, 98px)/.98 var(--display); letter-spacing: -.06em; color: var(--green); }
+.cinema-copy h2 em { font-style: normal; font-weight: 800; color: var(--pink); }
+.cinema-copy .eyebrow { color: var(--green); }
+.cinema-footnote { font-family: var(--hand); color: var(--pink); }
+
+.trailer-stage { background: #ffdf83; }
+.trailer-kicker { color: var(--pink); font-weight: 700; font-size: 10px; }
+.trailer-card h2 { font: 800 clamp(46px, 6.8vw, 100px)/.97 var(--display); letter-spacing: -.065em; color: var(--pink); text-shadow: 3px 4px 0 #fff7e8; }
+.trailer-card h2 > span:nth-child(2) { color: var(--green); }
+.trailer-card-0 h2 { font-size: clamp(70px, 11vw, 160px); }
+.trailer-card-1 h2, .trailer-card-3 h2 { font-size: clamp(42px, 5.9vw, 86px); }
+.trailer-card p { font-family: var(--hand); color: var(--pink); }
+.trailer-index { background: var(--pink); color: var(--ivory); padding: 7px 10px; border-radius: 50%; font-weight: 700; letter-spacing: 0; transform: rotate(-10deg); }
+.montage-strip { background: var(--green); }
+.montage-scribble, .scribble-two::after { border-color: var(--pink); }
+.filmi-confetti { position: absolute; inset: 0; pointer-events: none; }
+.filmi-confetti i { position: absolute; left: var(--x); top: var(--y); width: 8px; height: 17px; background: var(--pink); transform: rotate(var(--turn)); animation: confetti-wiggle 3s ease-in-out var(--delay) infinite alternate; }
+.filmi-confetti i:nth-child(3n) { background: var(--green); width: 13px; height: 6px; }
+.filmi-confetti i:nth-child(3n + 2) { background: #ee9b22; width: 10px; height: 10px; border-radius: 50%; }
+@keyframes confetti-wiggle { to { transform: translateY(-9px) rotate(calc(var(--turn) + 25deg)); } }
+
+.finale-quiet { font: 700 clamp(30px, 4vw, 50px)/1.2 var(--hand); color: var(--pink); }
+.hero-shade { background: linear-gradient(#fff7e8b3, #fff7e8d9 45%, #fff7e8e6); }
+.hero-names > .eyebrow { color: var(--green); }
+.hero-names h2 { font: 800 min(11vw, calc(135vw / var(--name-length, 5)), 155px)/.92 var(--display); letter-spacing: -.06em; color: var(--pink); text-transform: none; transform: rotate(-3deg); }
+.hero-names h2 > span:last-child { color: var(--green); }
+.hero-names h2 em { font: 700 .47em/.95 var(--hand); color: var(--pink); }
+.hero-married { font: 700 clamp(29px, 4vw, 49px)/1.15 var(--hand); margin-top: 25px; padding: 4px 20px 0; background: var(--marigold); color: var(--ink); transform: rotate(-4deg); }
+.hero-sticker { position: absolute; top: 25%; right: 12%; transform: rotate(12deg); width: 100px; font-size: 14px; }
+.hero-flower { left: 12%; bottom: 24%; width: 76px; height: 76px; }
+.date-stage { background: #ffe4e9; padding: 75px 0; }
+.date-ticket { position: relative; width: min(86vw, 1160px); padding: 40px 26px 0; background: var(--ivory); border: 2px solid var(--pink); border-radius: 10px; box-shadow: 9px 10px 0 var(--pink); transform: rotate(-2deg); text-align: center; }
+.date-label { font-size: 10px; color: var(--pink); margin-bottom: 27px; letter-spacing: .12em; }
+.release-date { font: 800 clamp(58px, 10.5vw, 155px)/1 var(--display); padding: 0; color: var(--pink); letter-spacing: -.06em; }
+.release-date b { color: var(--green); }
+.coming-soon { font: 700 clamp(27px, 3.5vw, 45px)/1.2 var(--hand); color: var(--green); margin-top: 20px; }
+.full-date { color: var(--pencil); margin-top: 8px; margin-bottom: 28px; font-weight: 600; }
+.ticket-stub { border-top: 2px dashed var(--pink); margin: 0 -26px; padding: 20px 26px; display: flex; justify-content: space-between; align-items: center; gap: 15px; color: var(--pink); font-size: 9px; font-weight: 700; letter-spacing: .12em; }
+.ticket-stub > span:last-child { white-space: nowrap; font: 800 19px var(--display); letter-spacing: 0; }
+.production-credit { bottom: 13%; color: var(--green); }
+.production-credit span { color: var(--pink); font-weight: 700; letter-spacing: .1em; }
+.post-credits { position: relative; background: var(--ivory); gap: 30px; padding: 100px 30px; text-align: center; }
+.post-flower { position: relative; width: 80px; height: 80px; }
+.post-credits > p { font: 700 clamp(27px, 3.5vw, 46px)/1.2 var(--hand); color: var(--pink); max-width: 700px; }
+.post-credits button { color: var(--green); font-size: 12px; border-color: var(--green); }
+
+@media (max-width: 1000px) and (min-width: 701px) {
+  .intro-stamp { left: -125px; width: 95px; font-size: 13px; }
+  .intro-review { right: -150px; width: 140px; }
+  .intro-review p { font-size: 17px; }
+  .childhood-stage, .childhood.groom .childhood-stage { padding-left: 7vw; padding-right: 7vw; gap: 6vw; }
+  .childhood-copy h2 { font-size: 5.7vw; }
+  .memory-sticker { width: 85px; right: -24px; font-size: 14px; }
+  .hero-sticker { right: 6%; width: 85px; top: 23%; }
+}
+@media (max-width: 700px) {
+  .intro-title { margin-top: -25px; width: 100%; padding: 0 25px; }
+  .intro-title > .eyebrow { font-size: 8px; margin-bottom: 18px; }
+  .intro-title h1 { font-size: clamp(75px, 19.5vw, 132px); }
+  .intro-line-1 { text-shadow: 3px 4px 0 var(--marigold); }
+  .intro-line-2 { margin-top: 15px; font-size: .43em; padding: 3px 18px 0; }
+  .intro-byline { font-size: 19px; margin-top: 21px; }
+  .intro-byline .intro-date { font-size: 8px; }
+  .intro-stamp { left: 6%; top: -66px; width: 67px; font-size: 10px; }
+  .intro-review { position: static; transform: rotate(-3deg); text-align: center; width: auto; margin: 17px auto 0; }
+  .intro-review p { font-size: 15px; }
+  .intro-review small { font-size: 8px; margin-top: 0; }
+  .intro-flower { top: -48px; right: 9%; width: 44px; height: 44px; }
+  .intro-sparkle { left: auto; right: 7%; bottom: 24%; width: 25px; height: 25px; }
+  .intro-bottom { bottom: 86px; }
+  .enter-button { padding: 10px 15px; font-size: 11px; }
+  .childhood-stage, .childhood.groom .childhood-stage { padding: 110px 28px 110px; gap: 30px; }
+  .childhood-copy { flex: none; max-width: 100%; }
+  .childhood-copy .eyebrow { font-size: 8px; margin-bottom: 15px; padding: 6px 9px; }
+  .childhood-copy h2 { font-size: clamp(42px, 11.7vw, 62px); line-height: .98; max-width: 100%; }
+  .childhood-copy p { font-size: 11px; margin: 13px auto 0; max-width: 260px; }
+  .childhood-note { margin-top: 11px; font-size: 15px; }
+  .childhood-note svg { display: none; }
+  .memory { width: min(76vw, 390px); padding: 5px 9px 4px; }
+  .memory::before { width: 70px; height: 20px; left: calc(50% - 35px); top: -11px; }
+  .memory-sticker { width: 73px; font-size: 12px; top: -24px; right: -20px; }
+  .film-edge { font-size: 6px; height: 24px; }
+  .film-edge.bottom { height: 28px; }
+  .childhood-cutout, .groom .childhood-cutout { left: auto; right: 5%; top: 65%; width: 23vw; height: 28vw; }
+  .paper-note { font-size: 11px; line-height: 1.2; margin-top: 5px; white-space: normal; }
+  .childhood-flower { width: 34px; height: 34px; left: 7%; top: 17%; }
+  .childhood-sparkle { right: 8%; bottom: 13%; width: 24px; height: 24px; }
+  .scene-footnote { bottom: 78px; font-size: 7px; }
+  .parallel-heading { top: 17%; }
+  .parallel-heading h2 { font-size: clamp(29px, 8vw, 42px); max-width: 360px; }
+  .life { top: 42%; }
+  .life > span { font-size: 20px; }
+  .life-years { top: 72%; }
+  .parallel-footer { bottom: 11%; font-size: 15px; max-width: 280px; }
+  .plot-before h2, .plot-after h2 { font-size: 14vw; }
+  .early-caption h2 { font-size: 27px; }
+  .cinema-copy h2 { font-size: 12vw; }
+  .cinema-copy .eyebrow { font-size: 7px; }
+  .trailer-kicker { top: 18%; font-size: 8px; }
+  .trailer-card h2 { font-size: 13vw; text-shadow: 2px 3px 0 var(--ivory); }
+  .trailer-card-0 h2 { font-size: 22vw; }
+  .trailer-card-1 h2, .trailer-card-3 h2 { font-size: 10.7vw; }
+  .trailer-card p { font-size: 18px; }
+  .hero-names h2 { font-size: min(19vw, calc(142vw / var(--name-length, 5))); }
+  .hero-married { font-size: 31px; margin-top: 24px; }
+  .hero-sticker { top: 24%; right: 8%; width: 70px; font-size: 10px; }
+  .hero-flower { left: 9%; bottom: 21%; width: 50px; height: 50px; }
+  .date-ticket { width: 89vw; padding: 30px 12px 0; border-radius: 7px; box-shadow: 5px 6px 0 var(--pink); }
+  .date-label { font-size: 7px; margin-bottom: 23px; letter-spacing: .08em; }
+  .release-date { font-size: 13.4vw; padding: 0; }
+  .coming-soon { font-size: 29px; margin-top: 16px; }
+  .full-date { font-size: 9px; margin-top: 6px; margin-bottom: 23px; }
+  .ticket-stub { margin: 0 -12px; padding: 15px 12px; font-size: 6px; letter-spacing: .07em; gap: 8px; }
+  .ticket-stub > span:last-child { font-size: 16px; }
+  .production-credit { bottom: 16%; font-size: 6px; }
+  .post-flower { width: 60px; height: 60px; }
+}
+@media (max-height: 690px) and (max-width: 700px) {
+  .intro-title { margin-top: -20px; }
+  .intro-title h1 { font-size: min(18vw, 94px); }
+  .intro-title > .eyebrow { margin-bottom: 12px; }
+  .intro-line-2 { margin-top: 10px; }
+  .intro-stamp { top: -44px; width: 55px; font-size: 8px; }
+  .intro-flower { top: -30px; width: 33px; height: 33px; }
+  .intro-review { margin-top: 8px; }
+  .intro-byline { margin-top: 16px; }
+  .intro-bottom { bottom: 75px; }
+  .childhood-stage, .childhood.groom .childhood-stage { padding-top: 90px; padding-bottom: 95px; gap: 24px; }
+  .childhood-copy h2 { font-size: 10vw; }
+  .childhood-copy p { display: block; font-size: 10px; max-width: 255px; margin-top: 10px; }
+  .childhood-note { margin-top: 8px; font-size: 13px; }
+  .memory { width: 66vw; }
+  .childhood-cutout, .groom .childhood-cutout { top: 65%; width: 21vw; height: 25vw; }
+  .parallel-heading { top: 15%; }
+  .parallel-heading h2 { font-size: 7.5vw; }
+  .life { top: 41%; width: 29vw; height: 38vw; }
+  .hero-sticker { top: 21%; }
+  .hero-names { padding-top: 3vh; }
+  .hero-married { font-size: 27px; margin-top: 20px; }
+  .hero-flower { bottom: 18%; }
+  .production-credit { bottom: 12%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .trailer-stage { background: #ffdf83; }
+  .trailer-kicker { max-width: none; }
+  .trailer-card { min-height: 45svh; }
+  .trailer-card h2 { text-shadow: none; }
+  .filmi-confetti { display: none; }
+  .childhood-flower, .childhood-sparkle { display: none; }
+  .hero-sticker { top: 13%; }
+  .date-ticket { margin: 0 auto; }
+}
