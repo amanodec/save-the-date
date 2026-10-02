@@ -1,4 +1,4 @@
-# Ek Love Story. Full Filmi.
+# Ek Love Story. Full Filmy.
 
 A mobile-first, scroll-directed Save the Date film, built with Vite, React, JavaScript, CSS, GSAP and ScrollTrigger. No backend, Next.js, or smooth-scrolling library.
 
@@ -26,7 +26,7 @@ Social titles, descriptions and the sharing photo are generated from the same we
 
 ## Experience
 
-Nine connected scenes with a cheeky Bollywood rom-com feel: poster-style opening credits, two scrapbook childhoods, parallel lives carried by paper characters, a camera-snap plot twist, an expanding cinema frame, five kinetic collage titles, a quiet announcement, the leading names, and a cinema-ticket save-the-date. Warm ivory, rani pink, marigold, and green carry through the finale and the small post-credit moment. Playful Hinglish, handwritten notes, taped photos, filmi stickers, and light confetti make the story feel personal and celebratory. Scrolling backwards reverses the story animation. Reduced-motion preferences show a simplified, readable film without pinning or animation.
+Nine connected scenes with a cheeky Bollywood rom-com feel: poster-style opening credits, two scrapbook childhoods, parallel lives carried by paper characters, a camera-snap plot twist, an expanding cinema frame, five kinetic collage titles, a quiet announcement, the leading names, and a cinema-ticket save-the-date. Warm ivory, rani pink, marigold, and green carry through the finale and the small post-credit moment. Playful Hinglish, handwritten notes, taped photos, filmy stickers, and light confetti make the story feel personal and celebratory. Scrolling backwards reverses the story animation. Reduced-motion preferences show a simplified, readable film without pinning or animation.
 
 Google Fonts supplies Bricolage Grotesque for bold poster titles, Kalam for handwritten notes, and DM Sans for supporting text. Cormorant Garamond remains available for legacy serif details; local fallback fonts are included. Photos and fonts are the only external runtime resources. Replace and self-host them for an offline deployment.
 
