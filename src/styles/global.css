@@ -241,6 +241,14 @@ html { scrollbar-color: #9a907a var(--ivory); }
   .hero-married { opacity: 1; }
 }
 
+/* Childhood memory captions no longer include birth-year labels. */
+.film-edge.bottom { justify-content: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .life-year-3 { opacity: 0; }
+  .life-year-1 { opacity: 1; }
+}
+
 /* A cheeky, homemade rom-com poster: rani pink, marigold, and a little masti. */
 :root {
   --ivory: #fff7e8;

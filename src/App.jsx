@@ -26,8 +26,6 @@ export default function App() {
             .from(q('.memory'), { opacity: 0.2, y: 35, rotation: scene.classList.contains('bride') ? -3 : 3, duration: 0.8 })
             .to(q('.memory-first img'), { scale: 1.07, duration: 1.5 }, 0)
             .to(q('.memory-second'), { opacity: 1, duration: 0.65 }, 0.9)
-            .to(q('.year-first'), { opacity: 0, duration: 0.2 }, 0.9)
-            .to(q('.year-second'), { opacity: 1, duration: 0.2 }, 1)
             .fromTo(q('.memory-second img'), { scale: 1.06 }, { scale: 1, duration: 1.5 }, 1)
           .fromTo(q('.childhood-cutout'), { autoAlpha: 0, y: 30, rotation: -12, scale: 0.8 }, { autoAlpha: 1, y: 0, rotation: 5, scale: 1, duration: 0.55, ease: 'back.out(1.8)' }, 1.1)
             .to(q('.childhood-cutout'), { y: -12, rotation: 0, duration: 0.8 }, 1.8)
@@ -61,7 +59,7 @@ export default function App() {
         gsap.timeline({ scrollTrigger: { trigger: '.cinema', start: 'top top', end: '+=140%', pin: '.cinema-stage', scrub: 0.8 } })
           .fromTo('.cinema-frame', { width: 'min(76vw, 680px)', height: 'min(57vw, 510px)' }, { width: '100vw', height: '100svh', duration: 2, ease: 'power1.inOut' })
           .from('.cinema-copy', { opacity: 0, duration: 0.8 }, 0.7).to('.cinema-footnote', { opacity: 0, duration: 0.5 }, 0.4).to('.cinema-frame', { opacity: 0, duration: 0.5 }, 2.4);
-        const trailer = gsap.timeline({ scrollTrigger: { trigger: '.trailer', start: 'top top', end: '+=185%', pin: '.trailer-stage', scrub: 0.25 } });
+        const trailer = gsap.timeline({ scrollTrigger: { trigger: '.trailer', start: 'top top', end: '+=300%', pin: '.trailer-stage', scrub: 0.25 } });
         const montageColors = ['#ffdf83', '#ffe4e9', '#fff7e8', '#ffdf83', '#ffe4e9'];
         trailer.fromTo('.trailer-collage', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.2 }, 0);
         wedding.trailer.forEach((_, i) => {
