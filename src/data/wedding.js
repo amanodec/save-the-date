@@ -1,8 +1,8 @@
 // Replace the eight URLs here with your own photos. Local files can live in public/photos/.
-// Use /photos/aanya-childhood.jpg, for example. Every visible story detail lives here.
+// Use /photos/meenakshi-childhood.jpg, for example. Every visible story detail lives here.
 export const wedding = {
-  bride: 'Aanya',
-  groom: 'Arjun',
+  bride: 'Meenakshi',
+  groom: 'Divyam',
   date: '2027-02-14',
   dateDisplay: '14 · 02 · 2027',
   dateLong: '14 February 2027',
@@ -25,8 +25,8 @@ export const wedding = {
     coupleHero: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486',
   },
   childhood: {
-    bride: { cue: 'Meanwhile…', title: 'Aanya had absolutely no idea.', caption: 'A whole little world. A story just beginning.', year: '1998', secondYear: '2007' },
-    groom: { cue: 'Somewhere else…', title: 'Arjun didn’t know either.', caption: 'Different adventures. The very same sky.', year: '1998', secondYear: '2007' },
+    bride: { cue: 'Meanwhile…', title: 'Meenakshi had absolutely no idea.', caption: 'A whole little world. A story just beginning.', year: '1998', secondYear: '2007' },
+    groom: { cue: 'Somewhere else…', title: 'Divyam didn’t know either.', caption: 'Different adventures. The very same sky.', year: '1998', secondYear: '2007' },
   },
   lives: { eyebrow: 'TWO LIVES, RUNNING IN PARALLEL', title: 'Life had its own plans.', years: ['1998', '2007', '2016', '2022'], captions: ['childhood', 'growing up', 'life happened', 'still no idea…'], footer: 'Different places. Different days. The same direction.' },
   meeting: { before: 'And then…', after: '…the plot changed.', together: 'The stories became one.', caption: 'Some things make sense only when you look back.' },
