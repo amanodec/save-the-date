@@ -1,11 +1,56 @@
-const meenakshiChildhood1 = new URL('../assets/meenakshi-childhood-1.png', import.meta.url).href;
-const meenakshiChildhood2 = new URL('../assets/meenakshi-childhood-2.png', import.meta.url).href;
-const divyamChildhood1 = new URL('../assets/divyam-childhood-1.png', import.meta.url).href;
-const divyamChildhood2 = new URL('../assets/divyam-childhood-2.png', import.meta.url).href;
-const meenakshiAdult = new URL('../assets/meenakshi-cutout.png', import.meta.url).href;
-const divyamAdult = new URL('../assets/divyam-cutout.png', import.meta.url).href;
-const coupleEarly = new URL('../assets/meenakshi-dviyam-1.png', import.meta.url).href;
-const coupleHero = new URL('../assets/meenakshi-divyam-2.png', import.meta.url).href;
+const responsiveImage = (small, medium, large, largeWidth) => ({
+  src: large,
+  srcSet: `${small} 400w, ${medium} 800w, ${large} ${largeWidth}w`,
+});
+
+const meenakshiChildhood1 = responsiveImage(
+  new URL('../assets/optimized/meenakshi-childhood-1-400.webp', import.meta.url).href,
+  new URL('../assets/optimized/meenakshi-childhood-1-800.webp', import.meta.url).href,
+  new URL('../assets/optimized/meenakshi-childhood-1-1200.webp', import.meta.url).href,
+  1200,
+);
+const meenakshiChildhood2 = responsiveImage(
+  new URL('../assets/optimized/meenakshi-childhood-2-400.webp', import.meta.url).href,
+  new URL('../assets/optimized/meenakshi-childhood-2-800.webp', import.meta.url).href,
+  new URL('../assets/optimized/meenakshi-childhood-2-1200.webp', import.meta.url).href,
+  1200,
+);
+const divyamChildhood1 = responsiveImage(
+  new URL('../assets/optimized/divyam-childhood-1-400.webp', import.meta.url).href,
+  new URL('../assets/optimized/divyam-childhood-1-800.webp', import.meta.url).href,
+  new URL('../assets/optimized/divyam-childhood-1-1200.webp', import.meta.url).href,
+  1200,
+);
+const divyamChildhood2 = responsiveImage(
+  new URL('../assets/optimized/divyam-childhood-2-400.webp', import.meta.url).href,
+  new URL('../assets/optimized/divyam-childhood-2-800.webp', import.meta.url).href,
+  new URL('../assets/optimized/divyam-childhood-2-1200.webp', import.meta.url).href,
+  1200,
+);
+const meenakshiAdult = responsiveImage(
+  new URL('../assets/optimized/meenakshi-cutout-400.webp', import.meta.url).href,
+  new URL('../assets/optimized/meenakshi-cutout-800.webp', import.meta.url).href,
+  new URL('../assets/optimized/meenakshi-cutout-1200.webp', import.meta.url).href,
+  1200,
+);
+const divyamAdult = responsiveImage(
+  new URL('../assets/optimized/divyam-cutout-400.webp', import.meta.url).href,
+  new URL('../assets/optimized/divyam-cutout-800.webp', import.meta.url).href,
+  new URL('../assets/optimized/divyam-cutout-1200.webp', import.meta.url).href,
+  1200,
+);
+const coupleEarly = responsiveImage(
+  new URL('../assets/optimized/meenakshi-dviyam-1-400.webp', import.meta.url).href,
+  new URL('../assets/optimized/meenakshi-dviyam-1-800.webp', import.meta.url).href,
+  new URL('../assets/optimized/meenakshi-dviyam-1-1020.webp', import.meta.url).href,
+  1020,
+);
+const coupleHero = responsiveImage(
+  new URL('../assets/optimized/meenakshi-divyam-2-400.webp', import.meta.url).href,
+  new URL('../assets/optimized/meenakshi-divyam-2-800.webp', import.meta.url).href,
+  new URL('../assets/optimized/meenakshi-divyam-2-1020.webp', import.meta.url).href,
+  1020,
+);
 
 // Replace the remaining photo URLs here with your own photos. Local files can live in public/photos/.
 // Use /photos/meenakshi-childhood.jpg, for example. Every visible story detail lives here.

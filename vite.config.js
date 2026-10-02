@@ -11,7 +11,7 @@ export default defineConfig({
   plugins: [react(), {
     name: 'wedding-metadata',
     transformIndexHtml(html) {
-      const shareImage = sitePath('/og-card.png');
+      const shareImage = sitePath('/og-card.jpg');
       return html.replace('<!-- wedding-metadata -->', [
         `<title>${escape(title)}</title>`,
         `<meta name="description" content="${escape(description)}"/>`,
@@ -22,7 +22,7 @@ export default defineConfig({
         `<meta property="og:title" content="${escape(title)}"/>`,
         `<meta property="og:description" content="${escape(description)}"/>`,
         `<meta property="og:image" content="${escape(shareImage)}"/>`,
-        `<meta property="og:image:type" content="image/png"/>`,
+        `<meta property="og:image:type" content="image/jpeg"/>`,
         `<meta property="og:image:width" content="1020"/>`,
         `<meta property="og:image:height" content="1541"/>`,
         `<meta property="og:image:alt" content="${escape(`${wedding.bride} & ${wedding.groom} — Save the Date`)}"/>`,
