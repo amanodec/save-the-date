@@ -519,3 +519,17 @@ button:focus-visible { outline-color: var(--pink); outline-width: 2px; }
   .hero-sticker { top: 13%; }
   .date-ticket { margin: 0 auto; }
 }
+
+/* Give Meenakshi's adult cutout a little more presence while keeping her feet anchored. */
+.meenakshi-adult-cutout {
+  transform: scale(1.11);
+  transform-origin: center bottom;
+}
+
+.life-bride .meenakshi-adult-cutout {
+  transform: scale(1.11) rotate(-4deg);
+}
+
+.montage-bride.meenakshi-adult-cutout {
+  transform: scale(1.11) rotate(7deg);
+}

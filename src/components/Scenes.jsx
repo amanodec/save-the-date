@@ -14,7 +14,7 @@ export function ChildhoodScene({ side, chapter }) {
   return <section className={`scene childhood ${side}`} data-chapter={chapter} aria-label={bride ? 'Her story' : 'His story'}><div className="scene-stage childhood-stage">
     <div className="childhood-copy"><span className="eyebrow">{data.cue}</span><h2>{data.title.split('\n').map(line => <span key={line}>{line}</span>)}</h2><p>{data.caption}</p><div className="childhood-note"><span>{data.note}</span><svg viewBox="0 0 160 60" fill="none" aria-hidden="true"><path d="M5 15c22 48 91 34 91 11S70 9 78 32s51 17 72-12m-24 2 25-4-4 24" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg></div></div>
     <div className="memory"><span className="memory-sticker filmi-sticker" aria-hidden="true">{data.sticker.map(line => <span key={line}>{line}</span>)}</span><div className="film-edge top"><span>{bride ? 'A' : 'B'} — 01</span><span>{data.archive}</span><span>✦</span></div><div className="memory-window"><Photo className="memory-first" src={w.photos[bride ? 'brideChild1' : 'groomChild1']} alt={`${bride ? w.bride : w.groom}’s first childhood memory`}/><Photo className="memory-second" src={w.photos[bride ? 'brideChild2' : 'groomChild2']} alt={`${bride ? w.bride : w.groom} growing up`}/></div><div className="film-edge bottom"><span>{bride ? w.bride : w.groom} — THE EARLY YEARS</span></div></div>
-    <div className="childhood-cutout" aria-hidden="true"><PaperCutout src={w.photos[bride ? 'brideAdult' : 'groomAdult']} alt={`${bride ? w.bride : w.groom}, a cutout character`}/></div>
+    <div className="childhood-cutout" aria-hidden="true"><PaperCutout className={bride ? 'meenakshi-adult-cutout' : ''} src={w.photos[bride ? 'brideAdult' : 'groomAdult']} alt={`${bride ? w.bride : w.groom}, a cutout character`}/></div>
     <Flower className="childhood-flower"/><Sparkle className="childhood-sparkle"/>
     <span className="scene-footnote">{w.childhoodFootnote}</span>
   </div></section>;
@@ -22,7 +22,7 @@ export function ChildhoodScene({ side, chapter }) {
 export function ParallelLives() {
   return <section className="scene parallel" data-chapter="3" aria-label="Two lives drawing closer"><div className="scene-stage parallel-stage">
     <div className="parallel-heading"><span className="eyebrow">{w.lives.eyebrow}</span><h2>{w.lives.title.split('\n').map(line => <span key={line}>{line}</span>)}</h2></div>
-    <div className="life life-bride"><PaperCutout src={w.photos.brideAdult} alt={`${w.bride}, on her timeline`}/><span>{w.bride}</span></div>
+    <div className="life life-bride"><PaperCutout className="meenakshi-adult-cutout" src={w.photos.brideAdult} alt={`${w.bride}, on her timeline`}/><span>{w.bride}</span></div>
     <div className="life life-groom"><PaperCutout src={w.photos.groomAdult} alt={`${w.groom}, on his timeline`}/><span>{w.groom}</span></div>
     <div className="paths" aria-hidden="true"><div className="path path-left"/><div className="path path-right"/><div className="meeting-dot"/></div>
     <div className="life-years">{w.lives.years.map((year, i) => <div className={`life-year life-year-${i}`} key={year}><span>{year}</span><small>{w.lives.captions[i]}</small></div>)}</div>
@@ -34,7 +34,7 @@ export function MeetingScene() {
     <div className="single-path" aria-hidden="true"/>
     <div className="plot-before"><span className="eyebrow">{w.meeting.eyebrow}</span><h2>{w.meeting.before}</h2></div>
     <div className="plot-after"><h2>{w.meeting.after}</h2></div>
-    <div className="meeting-pair" aria-hidden="true"><PaperCutout className="pair-bride" src={w.photos.brideAdult}/><PaperCutout className="pair-groom" src={w.photos.groomAdult}/><span className="snap-caption">{w.meeting.snapLabel}</span></div>
+    <div className="meeting-pair" aria-hidden="true"><PaperCutout className="pair-bride meenakshi-adult-cutout" src={w.photos.brideAdult}/><PaperCutout className="pair-groom" src={w.photos.groomAdult}/><span className="snap-caption">{w.meeting.snapLabel}</span></div>
     <div className="camera-flash" aria-hidden="true"/>
     <div className="early-couple"><Photo src={w.photos.coupleEarly} alt={`${w.bride} and ${w.groom} together (placeholder)`}/><div className="early-caption"><span className="eyebrow">{w.meeting.photoEyebrow}</span><h2>{w.meeting.together}</h2></div></div>
   </div></section>;
@@ -48,7 +48,7 @@ export function TrailerSequence() {
     <span className="trailer-kicker eyebrow">{w.montage.eyebrow}</span>
     <div className="trailer-collage" aria-hidden="true">
       <div className="montage-piece montage-couple"><Photo src={w.photos.coupleEarly} alt=""/><span className="paper-tape"/></div>
-      <PaperCutout className="montage-piece montage-bride" src={w.photos.brideAdult}/>
+      <PaperCutout className="montage-piece montage-bride meenakshi-adult-cutout" src={w.photos.brideAdult}/>
       <PaperCutout className="montage-piece montage-groom" src={w.photos.groomAdult}/>
       <div className="montage-piece montage-strip"><Photo src={w.photos.brideChild1} alt=""/><Photo src={w.photos.groomChild1} alt=""/><Photo src={w.photos.coupleEarly} alt=""/></div>
       <span className="montage-scribble scribble-one"/><span className="montage-scribble scribble-two"/>
