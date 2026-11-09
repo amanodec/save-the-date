@@ -1,1 +1,4 @@
-/wedding /wedding/index.html 200
+/wedding / 301
+/wedding/ / 301
+/wedding/index.html / 301
+/savethedate /savethedate/ 301

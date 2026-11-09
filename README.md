@@ -4,7 +4,7 @@ A mobile-first, scroll-directed Save the Date film, built with Vite, React, Java
 
 ## Full wedding invitation
 
-The full invitation lives at `/wedding/` (also accessible as `/wedding`). The original save-the-date stays at `/`. Both are built into the same `dist/` directory and can use the existing Netlify site: build command `npm run build`, publish directory `dist`. A second repository or Netlify project is unnecessary. There is no SPA catch-all redirect requirement; Vite builds a separate HTML entry at `dist/wedding/index.html` so the invitation has its own server-rendered social metadata.
+The full wedding invitation is the homepage at `/`. The original save-the-date lives at `/savethedate/` (also accessible as `/savethedate`). Existing `/wedding` links redirect to the homepage. Both are built into the same `dist/` directory and can use the existing Netlify site: build command `npm run build`, publish directory `dist`. A second repository or Netlify project is unnecessary. There is no SPA catch-all redirect requirement; Vite builds separate HTML entries at `dist/index.html` and `dist/savethedate/index.html`, each with its own social metadata.
 
 The invitation uses illustrated moonlit courtyard artwork, opening doors, the Laavan soundtrack from `src/music/laavan.mp3` (started only after a tap), the couple’s original photo, family introductions, two event chapters, a live countdown, Google Maps directions, WhatsApp RSVP and a downloadable invitation JPG. Reduced-motion preferences disable the opening and decorative motion. An always-available mobile dock links to event details and RSVP.
 
