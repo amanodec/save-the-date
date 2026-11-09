@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { wedding } from '../data/wedding';
-export function useSound() {
+export function useSound(audioConfig = wedding.audio) {
+  const { src, volume } = audioConfig;
   const [playing, setPlaying] = useState(false);
   const [error, setError] = useState('');
   const audio = useRef(null);
@@ -9,8 +10,8 @@ export function useSound() {
   const toggle = useCallback(async () => {
     const next = !desired.current;
     try {
-      if (wedding.audio.src) {
-        if (!audio.current) { audio.current = new Audio(wedding.audio.src); audio.current.loop = true; audio.current.volume = wedding.audio.volume; }
+      if (src) {
+        if (!audio.current) { audio.current = new Audio(src); audio.current.loop = true; audio.current.volume = volume; }
         if (next) await audio.current.play(); else audio.current.pause();
       } else {
         if (!synth.current) {
@@ -31,7 +32,7 @@ export function useSound() {
       }
       desired.current = next; setPlaying(next); setError('');
     } catch { desired.current = false; setPlaying(false); setError('Sound couldn’t start. Enjoy the film silently.'); }
-  }, []);
+  }, [src, volume]);
   useEffect(() => {
     const visibility = () => {
       if (document.hidden) { audio.current?.pause(); synth.current?.ctx.suspend(); }

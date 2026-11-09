@@ -2,6 +2,18 @@
 
 A mobile-first, scroll-directed Save the Date film, built with Vite, React, JavaScript, CSS, GSAP and ScrollTrigger. No backend, Next.js, or smooth-scrolling library.
 
+## Full wedding invitation
+
+The full invitation lives at `/wedding/` (also accessible as `/wedding`). The original save-the-date stays at `/`. Both are built into the same `dist/` directory and can use the existing Netlify site: build command `npm run build`, publish directory `dist`. A second repository or Netlify project is unnecessary. There is no SPA catch-all redirect requirement; Vite builds a separate HTML entry at `dist/wedding/index.html` so the invitation has its own server-rendered social metadata.
+
+The invitation uses illustrated moonlit courtyard artwork, opening doors, the Laavan soundtrack from `src/music/laavan.mp3` (started only after a tap), the couple’s original photo, family introductions, two event chapters, a live countdown, Google Maps directions, WhatsApp RSVP and a downloadable invitation JPG. Reduced-motion preferences disable the opening and decorative motion. An always-available mobile dock links to event details and RSVP.
+
+Confirmed details live in `src/wedding/invitation.js`: Meenakshi Sharma and Divyam Thapa; engagement on 1 December 2026 and baraat on 2 December 2026, both from 7 PM IST at Gulati Bhawan. The countdown switches to the baraat when the engagement starts, then displays a celebration message when the baraat begins. RSVP opens an editable WhatsApp message to +91 8334907636; nothing is sent automatically.
+
+Custom generated illustrations are stored as compressed WebP assets in `public/wedding/art/`. They depict an imagined wedding setting, not photographs of the venue. The original couple photo is reused without alteration. To regenerate the downloadable card and social sharing image after updating details or artwork, run `npm run invitation:exports`. Family names are drawn from the invitation data; event wording and the exported card layout can be adjusted in `scripts/create-invitation-exports.mjs`.
+
+Run `npm run test:wedding` to verify countdown boundaries and the WhatsApp destination. Set `VITE_SITE_URL` to the public site URL for absolute canonical and sharing-image links; Netlify’s `URL` environment variable is also supported automatically.
+
 ## Run
 
 ```sh

@@ -7,7 +7,9 @@
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "optimize:images": "node scripts/optimize-images.mjs"
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "invitation:exports": "node scripts/create-invitation-exports.mjs",
+    "test:wedding": "node --test tests/invitation.test.mjs"
   },
   "dependencies": {
     "gsap": "^3.14.2",
