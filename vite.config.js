@@ -29,7 +29,7 @@ export default defineConfig({
       const pageTitle = isInvitation ? 'Meenakshi & Divyam | You’re invited | 1 & 2 December 2026' : title;
       const pageDescription = isInvitation ? 'With love, the Sharma & Thapa families invite you to celebrate Meenakshi & Divyam. Engagement: 1 December. Baraat: 2 December 2026. Both evenings, 7:00 PM onwards at Gulati Bhawan.' : description;
       const pageUrl = sitePath(isInvitation ? '/wedding/' : '/');
-      const shareImage = sitePath(isInvitation ? '/wedding/og-invitation.jpg' : '/og-card.jpg');
+      const shareImage = sitePath(isInvitation ? '/wedding/og-invitation.jpg?v=2' : '/og-card.jpg');
       const imageAlt = isInvitation ? 'Meenakshi & Divyam | Wedding celebrations, 1 & 2 December 2026, Gulati Bhawan' : `${wedding.bride} & ${wedding.groom} | Save the Date`;
       return html.replace('<!-- wedding-metadata -->', [
         `<title>${escape(pageTitle)}</title>`,

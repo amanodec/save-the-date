@@ -36,18 +36,21 @@ const card = `<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="2160"
 await sharp(Buffer.from(card)).jpeg({ quality: 92 }).toFile(new URL('../public/wedding/Meenakshi-Divyam-Wedding-Invitation.jpg', import.meta.url).pathname);
 
 const share = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+  <defs><clipPath id="art-panel"><rect x="720" width="480" height="630"/></clipPath></defs>
   <rect width="1200" height="630" fill="#102d31"/>
-  <image href="${image}" x="680" y="-65" width="520" height="780"/>
+  <image href="${image}" x="720" y="0" width="480" height="720" clip-path="url(#art-panel)"/>
+  <path d="M720 0v630" stroke="#d8bb7e" opacity=".4"/>
   <path d="M28 28h1144v574H28Z" fill="none" stroke="#d8bb7e" opacity=".65"/>
-  <g font-family="${serif}" fill="#f6efdf">
-    ${text(78, 109, 16, 'WITH LOVE, YOU’RE INVITED', 'letter-spacing="3" fill="#d8bb7e"')}
-    ${text(74, 226, 82, 'Meenakshi')}
-    ${text(310, 287, 52, '&', 'font-style="italic" fill="#d8bb7e"')}
-    ${text(74, 376, 86, 'Divyam')}
-    <path d="M78 417h500" stroke="#d8bb7e" opacity=".6"/>
-    ${text(78, 468, 24, '01 & 02 DECEMBER 2026', 'letter-spacing="2"')}
-    ${text(78, 510, 22, 'Gulati Bhawan · 7:00 PM onwards', 'fill="#d8bb7e"')}
-    ${text(78, 565, 21, 'Two hearts. Two families. One beautiful beginning.', 'font-style="italic"')}
+  <g text-anchor="middle" font-family="${serif}" fill="#f6efdf">
+    ${text(360, 100, 16, 'WITH LOVE, YOU’RE INVITED', 'letter-spacing="3" fill="#d8bb7e"')}
+    ${text(360, 220, 88, 'Meenakshi')}
+    ${text(360, 284, 52, '&', 'font-style="italic" fill="#d8bb7e"')}
+    ${text(360, 370, 92, 'Divyam')}
+    <path d="M150 411h185m50 0h185" stroke="#d8bb7e" opacity=".6"/>
+    <path d="m360 404 7 7-7 7-7-7Z" fill="none" stroke="#d8bb7e" opacity=".8"/>
+    ${text(360, 463, 24, '01 & 02 DECEMBER 2026', 'letter-spacing="2"')}
+    ${text(360, 505, 22, 'Gulati Bhawan · 7:00 PM onwards', 'fill="#d8bb7e"')}
+    ${text(360, 558, 21, 'Two hearts. Two families. One beautiful beginning.', 'font-style="italic"')}
   </g>
 </svg>`;
 await sharp(Buffer.from(share)).jpeg({ quality: 90 }).toFile(new URL('../public/wedding/og-invitation.jpg', import.meta.url).pathname);
