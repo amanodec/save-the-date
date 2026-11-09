@@ -75,8 +75,8 @@ export function useWeddingMotion(root) {
           const select = gsap.utils.selector(card);
           const baraat = card.classList.contains('baraat');
           const timeline = gsap.timeline({ scrollTrigger: { trigger: card, start: 'top 86%', once: true } });
-          timeline.from(select('.event-art'), { clipPath: baraat ? 'inset(0% 100% 0% 0%)' : 'inset(0% 0% 100% 0% round 45% 45% 0% 0%)', duration: 1.4, ease: 'power3.inOut' })
-            .from(select('.event-kicker, .event-heading, .event-hindi, .event-description, .event-details'), { autoAlpha: 0, y: baraat ? 30 : 18, stagger: 0.13, duration: 0.9, ease: baraat ? 'back.out(1.2)' : 'power2.out' }, 0.5);
+          timeline.from(select('.event-art'), { autoAlpha: 0, x: baraat ? 24 : 0, y: baraat ? 0 : 20, duration: 1.4, ease: 'power3.out' })
+            .from(select('.event-number, .event-kicker, .event-heading, .event-hindi, .event-description, .event-details'), { autoAlpha: 0, y: baraat ? 30 : 18, stagger: 0.13, duration: 0.9, ease: baraat ? 'back.out(1.2)' : 'power2.out' }, 0.5);
           if (!baraat) {
             timeline.fromTo(select('.ceremony-rings circle'), { strokeDasharray: 200, strokeDashoffset: 200 }, { strokeDashoffset: 0, stagger: 0.2, duration: 1.4 }, 0.7);
           }
