@@ -14,6 +14,7 @@ const invitationAudio = {
 function Icon({ name, ...props }) {
   const paths = {
     arrow: <><path d="M4 12h15M13 5l7 7-7 7" /></>,
+    external: <path d="M6 18 18 6M6 6h12v12" />,
     down: <><path d="M12 3v17M5 13l7 7 7-7" /></>,
     pin: <><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></>,
     calendar: <><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M7 2v6m10-6v6M3 11h18m-13 5h3" /></>,
@@ -45,7 +46,7 @@ function EventCard({ event, index }) {
     <div className="event-art"><img src={event.image} alt={event.imageAlt} loading="lazy" width="1536" height="1024" />{event.id === 'baraat' && <Petals count={12} className="marigold-petals" />}</div>
     <div className="event-content"><span className="event-number">CHAPTER {String(index + 1).padStart(2, '0')}</span><div className="event-kicker">{event.id === 'engagement' ? <><svg className="ceremony-rings" viewBox="0 0 110 65" fill="none" aria-hidden="true"><circle cx="40" cy="33" r="26" /><circle cx="73" cy="33" r="26" /><path d="m35 7 5-6 5 6" /></svg><span>FIRST, A LITTLE SPARKLE.</span></> : <><span className="baraat-script">Full dhamaal.</span><span>THEN, A LITTLE EXTRA FILMY.</span></>}</div><div className="event-heading"><div><span className="eyebrow">{event.day.toUpperCase()}</span><h3>{event.title}</h3></div><div className="event-date"><span>{event.shortDate}</span><small>{event.month}</small></div></div>
       <p className="event-hindi">{event.hindi}</p><p className="event-description">{event.description}</p>
-      <div className="event-details"><span><Icon name="calendar" />{event.dateLabel}</span><span><i className="time-dot" />{event.time}</span><a href={invitation.mapsUrl} target="_blank" rel="noreferrer"><Icon name="pin" />{invitation.venue}<span aria-hidden="true">↗</span></a></div>
+      <div className="event-details"><span><Icon name="calendar" />{event.dateLabel}</span><span><i className="time-dot" />{event.time}</span><a href={invitation.mapsUrl} target="_blank" rel="noreferrer"><Icon name="pin" />{invitation.venue}<Icon name="external" className="external-arrow" width="14" height="14" /></a></div>
     </div>
   </article>;
 }
@@ -113,7 +114,7 @@ export default function WeddingInvite() {
 
     <div inert={!opened ? true : undefined} className="invite-world">
       <a className="skip-link" href="#celebrations">Skip to the celebrations</a>
-      <header className="invite-header"><a className="monogram" href="#home" aria-label="Meenakshi and Divyam, back to top">m<span>&</span>d</a><nav aria-label="Invitation"><a href="#celebrations">The celebrations</a><a href="#venue">The venue</a><a href="#rsvp" className="header-rsvp">RSVP <span aria-hidden="true">↗</span></a></nav><button className="music-button" onClick={sound.toggle} aria-label={sound.playing ? 'Pause the music' : 'Play the music'} aria-pressed={sound.playing}><span className={`music-bars ${sound.playing ? 'playing' : ''}`} aria-hidden="true"><i /><i /><i /><i /></span><span>{sound.playing ? 'Music on' : 'Music off'}</span></button></header>
+      <header className="invite-header"><a className="monogram" href="#home" aria-label="Meenakshi and Divyam, back to top">m<span>&</span>d</a><nav aria-label="Invitation"><a href="#celebrations">The celebrations</a><a href="#venue">The venue</a><a href="#rsvp" className="header-rsvp">RSVP <Icon name="external" className="external-arrow" width="14" height="14" /></a></nav><button className="music-button" onClick={sound.toggle} aria-label={sound.playing ? 'Pause the music' : 'Play the music'} aria-pressed={sound.playing}><span className={`music-bars ${sound.playing ? 'playing' : ''}`} aria-hidden="true"><i /><i /><i /><i /></span><span>{sound.playing ? 'Music on' : 'Music off'}</span></button></header>
 
       <main ref={main} tabIndex="-1" id="invitation">
         <section className="wedding-hero motion-scene" id="home" aria-labelledby="hero-title">
